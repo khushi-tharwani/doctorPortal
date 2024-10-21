@@ -1,0 +1,163 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc; /* Light background for better readability */
+    color: #333;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    background-color: #4A90E2; /* Soft blue for the navbar */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links a:hover {
+    color: #FFD700; /* Gold color on hover */
+  }
+  
+  /* Dashboard styles */
+  .dashboard {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 2rem;
+  }
+  
+  .stat {
+    background-color: #ffffff; /* White background for cards */
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
+    text-align: center;
+    width: 30%; /* Each stat card takes 30% of the width */
+  }
+  
+  .stat h3 {
+    color: #4A90E2; /* Matching color for titles */
+    margin: 0 0 1rem;
+  }
+  
+  /* Doctor Portal styles */
+  .doctor-portal {
+    padding: 2rem;
+  }
+  
+  .doctor-list, .appointments-list, .patients-list {
+    margin-top: 2rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #ffffff; /* White background for list items */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.2s ease;
+  }
+  
+  li:hover {
+    transform: translateY(-3px); /* Slight lift effect on hover */
+  }
+  
+  /* Patient Management form styles */
+  .form-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 2rem auto;
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    color: #4A90E2;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #4A90E2; /* Change border color on focus */
+  }
+  
+  button {
+    background-color: #4A90E2;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #3B7BBF; /* Darker blue on hover */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .stats {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .stat {
+      width: 80%; /* Full width on smaller screens */
+      margin-bottom: 1rem; /* Space between cards */
+    }
+  }
