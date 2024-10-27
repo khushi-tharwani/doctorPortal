@@ -15,8 +15,8 @@ const PatientManagement = () => {
         <ul>
           {patients.map((patient) => (
             <li key={patient.id}>
-              {patient.name}, Age: {patient.age}, Condition: {patient.condition}
-              <button onClick={() => removePatient(patient.id)}>Delete</button>
+            Name:  {patient.name}, Age: {patient.age}, Condition: {patient.condition}, Contact: {patient.contact}
+            
             </li>
           ))}
         </ul>

@@ -1,163 +1,194 @@
+/* Global Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f9fc; /* Light background for better readability */
-    color: #333;
-  }
-  
-  /* Navbar styles */
-  .navbar {
-    background-color: #4A90E2; /* Soft blue for the navbar */
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  }
-  
-  .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .navbar-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-links a:hover {
-    color: #FFD700; /* Gold color on hover */
-  }
-  
-  /* Dashboard styles */
-  .dashboard {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F5F5F5; /* Light beige background */
+  color: #4A4A4A; /* Dark gray for readability */
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #556B2F; /* Olive Green for Navbar */
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFD700; /* Gold */
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #FFD700; /* Gold hover effect */
+}
+
+/* Dashboard Styles */
+.dashboard {
+  padding: 2rem;
+  background-color: #ffffff; /* White background for dashboard */
+  border-radius: 10px; /* Rounded corners for the dashboard */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 1200px; /* Limit max width for better layout */
+  margin: 2rem auto; /* Centered with margins */
+  text-align: center; /* Center align text */
+}
+
+.dashboard h2 {
+  color: #2c3e50; /* Darker shade for the heading */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around; /* Space evenly between cards */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 2rem; /* Space between each stat card */
+}
+
+.stat {
+  background-color: #e9ecef; /* Light gray background for stats */
+  border-radius: 10px; /* Rounded corners */
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  flex: 1; /* Allow flex for responsiveness */
+  min-width: 250px; /* Minimum width for stat cards */
+}
+
+.stat:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.stat h3 {
+  color: #27ae60; /* Green color for headings */
+  font-size: 1.5rem; /* Slightly larger font size */
+  margin: 0 0 0.5rem; /* Margin for spacing */
+}
+
+.stat p {
+  font-size: 2rem; /* Larger font size for counts */
+  font-weight: bold; /* Bold text for emphasis */
+  color: #34495e; /* Darker gray for readability */
+}
+
+/* Form Styles */
+.form-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  width: auto;                      /* Allow input to size based on content */
+  max-width: 300px;                /* Set a maximum width */
+  padding: 0.5rem;                 /* Adjust padding */
+  border: 1px solid #ddd;          /* Light gray border */
+  border-radius: 5px;              /* Rounded corners */
+  transition: border-color 0.3s ease; /* Smooth transition for focus effect */
+  font-size: 1rem;                 /* Font size for readability */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+  border-color: #556B2F;           /* Olive green border on focus */
+  box-shadow: 0 0 5px rgba(86, 107, 47, 0.5); /* Subtle shadow effect */
+}
+
+/* Button Styles */
+button {
+  background-color: #6a994e; /* Softer green background */
+  color: white;              /* White text color */
+  padding: 0.5rem 1rem;     /* Adjusted padding for a smaller button */
+  border: none;              /* No border */
+  border-radius: 5px;       /* Rounded corners */
+  cursor: pointer;           /* Pointer cursor on hover */
+  font-size: 0.9rem;        /* Smaller font size */
+  max-width: 150px;         /* Set a maximum width for buttons */
+  margin: 1rem auto;        /* Center the button */
+  display: block;           /* Ensure it is treated as a block element */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+button:hover {
+  background-color: #4a7c2c; /* Darker muted green on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+button:active {
+  transform: translateY(0); /* Reset lift effect on click */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .stats {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 800px;
-    margin-top: 2rem;
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center; /* Center cards */
   }
-  
+
   .stat {
-    background-color: #ffffff; /* White background for cards */
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
-    text-align: center;
-    width: 30%; /* Each stat card takes 30% of the width */
+    width: 100%; /* Full width for stat cards */
+    max-width: 400px; /* Limit max width */
   }
-  
-  .stat h3 {
-    color: #4A90E2; /* Matching color for titles */
-    margin: 0 0 1rem;
-  }
-  
-  /* Doctor Portal styles */
-  .doctor-portal {
-    padding: 2rem;
-  }
-  
-  .doctor-list, .appointments-list, .patients-list {
-    margin-top: 2rem;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    background-color: #ffffff; /* White background for list items */
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
-    transition: transform 0.2s ease;
-  }
-  
-  li:hover {
-    transform: translateY(-3px); /* Slight lift effect on hover */
-  }
-  
-  /* Patient Management form styles */
+
   .form-container {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: 2rem auto;
+    padding: 1rem; /* Adjust padding on smaller screens */
   }
-  
-  .form-container h2 {
-    text-align: center;
-    color: #4A90E2;
+
+  .navbar {
+    flex-direction: column; /* Stack navbar items on smaller screens */
+    align-items: flex-start; /* Align to start */
   }
-  
-  .form-group {
-    margin-bottom: 1.5rem;
+
+  .navbar-links {
+    flex-direction: column; /* Stack links vertically */
   }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
+
+  .navbar-links a {
+    margin-bottom: 0.5rem; /* Space between links */
   }
-  
-  .form-group input,
-  .form-group select {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    transition: border-color 0.3s ease;
-  }
-  
-  .form-group input:focus,
-  .form-group select:focus {
-    border-color: #4A90E2; /* Change border color on focus */
-  }
-  
-  button {
-    background-color: #4A90E2;
-    color: white;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #3B7BBF; /* Darker blue on hover */
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .stats {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .stat {
-      width: 80%; /* Full width on smaller screens */
-      margin-bottom: 1rem; /* Space between cards */
-    }
-  }
+}
+.patient-card button {
+  background-color: #6a994e;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.patient-card button:hover {
+  background-color: #4a7c2c;
+}

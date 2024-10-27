@@ -5,18 +5,30 @@ import React, { createContext, useContext, useState } from 'react';
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  // Initialize state
-  const [patients, setPatients] = useState([]); // Start with empty array
-  const [appointments, setAppointments] = useState([]); // Start with empty array
-  const [doctors, setDoctors] = useState([]); // Start with empty array
+  const [patients, setPatients] = useState([]);
+  const [appointments, setAppointments] = useState([]);
+  const [doctors, setDoctors] = useState([]);
+
+  // Function to add a new patient
+  const addPatient = (patient) => {
+    setPatients((prevPatients) => [...prevPatients, patient]);
+  };
 
   return (
-    <AppContext.Provider value={{ patients, setPatients, appointments, setAppointments, doctors, setDoctors }}>
+    <AppContext.Provider
+      value={{
+        patients,
+        addPatient,
+        appointments,
+        setAppointments,
+        doctors,
+        setDoctors,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
 };
 
-export const useAppContext = () => {
-  return useContext(AppContext);
-};
+// Custom hook to use AppContext
+export const useAppContext = () => useContext(AppContext);

@@ -1,3 +1,5 @@
+// src/components/AddPatientForm.jsx
+
 import React, { useState } from 'react';
 import { useAppContext } from '../context/AppContext';
 
@@ -6,14 +8,16 @@ const AddPatientForm = () => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [condition, setCondition] = useState('');
+  const [contact, setContact] = useState(''); // New state for contact
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name && age && condition) {
-      addPatient({ name, age: parseInt(age), condition }); // Ensure age is a number
+    if (name && age && condition && contact) { // Ensure all fields are filled
+      addPatient({ name, age: parseInt(age), condition, contact }); // Include contact
       setName('');
       setAge('');
       setCondition('');
+      setContact(''); // Reset contact
     }
   };
 
@@ -39,6 +43,13 @@ const AddPatientForm = () => {
         placeholder="Condition"
         value={condition}
         onChange={(e) => setCondition(e.target.value)}
+        required
+      />
+      <input
+        type="text"
+        placeholder="Contact Number" // New contact input
+        value={contact}
+        onChange={(e) => setContact(e.target.value)}
         required
       />
       <button type="submit">Add Patient</button>

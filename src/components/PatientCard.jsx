@@ -1,13 +1,19 @@
-import React from 'react';
+// src/components/PatientList.jsx
 
-const PatientCard = ({ patient }) => {
+import React from 'react';
+import { useAppContext } from '../context/AppContext';
+import PatientCard from './PatientCard';
+
+const PatientList = () => {
+  const { patients } = useAppContext();
+
   return (
-    <div className="patient-card">
-      <h3>{patient.name}</h3>
-      <p>Age: {patient.age}</p>
-      <p>Condition: {patient.condition}</p>
+    <div className="patient-list">
+      {patients.map((patient, index) => (
+        <PatientCard key={index} patient={patient} />
+      ))}
     </div>
   );
 };
 
-export default PatientCard;
+export default PatientList;

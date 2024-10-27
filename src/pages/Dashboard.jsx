@@ -3,10 +3,10 @@
 import React from 'react';
 import { useAppContext } from '../context/AppContext';
 
+
 const Dashboard = () => {
   const { patients, appointments, doctors } = useAppContext();
 
-  // Check if the arrays are defined before accessing their length
   const patientsCount = patients ? patients.length : 0;
   const appointmentsCount = appointments ? appointments.length : 0;
   const doctorsCount = doctors ? doctors.length : 0;
