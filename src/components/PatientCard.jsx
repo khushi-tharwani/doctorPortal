@@ -1,19 +1,25 @@
-// src/components/PatientList.jsx
+import React, { useRef } from 'react';
 
-import React from 'react';
-import { useAppContext } from '../context/AppContext';
-import PatientCard from './PatientCard';
+const PatientCard = ({ patient }) => {
+  const audioRef = useRef(null);
 
-const PatientList = () => {
-  const { patients } = useAppContext();
+  const handlePlayAudio = () => {
+    // Use backticks for template literals
+    const utterance = new SpeechSynthesisUtterance(`Patient Name: ${patient.name}. Age: ${patient.age}. Condition: ${patient.condition}. Contact: ${patient.contact}.`);
+    window.speechSynthesis.speak(utterance);
+  };
 
   return (
-    <div className="patient-list">
-      {patients.map((patient, index) => (
-        <PatientCard key={index} patient={patient} />
-      ))}
-    </div>
+    <tr className="patient-card">
+      <td>{patient.name}</td>
+      <td>{patient.age}</td>
+      <td>{patient.condition}</td>
+      <td>{patient.contact}</td>
+      <td>
+        <button onClick={handlePlayAudio}>Play Audio Feedback</button>
+      </td>
+    </tr>
   );
 };
 
-export default PatientList;
+export default PatientCard;

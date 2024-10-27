@@ -51,13 +51,17 @@ const AppointmentScheduling = () => {
 
       <div className="appointment-list">
         <h3>Scheduled Appointments</h3>
-        <ul>
-          {appointments.map((appointment) => (
-            <li key={appointment.id}>
-              {appointment.date} - {appointment.patientName} with Dr. {appointment.doctorName}
-            </li>
-          ))}
-        </ul>
+        {appointments.length === 0 ? (
+          <p>No appointments scheduled.</p>
+        ) : (
+          appointments.map((appointment) => (
+            <div className="patient-card" key={appointment.id}>
+              <h3>{appointment.patientName}</h3>
+              <p>Date: {appointment.date}</p>
+              <p>Doctor: Dr. {appointment.doctorName}</p>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

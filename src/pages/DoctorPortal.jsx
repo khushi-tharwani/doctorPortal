@@ -1,5 +1,7 @@
+// doctor portal // src/pages/DoctorPortal.jsx
 import React from 'react';
 import { useAppContext } from '../context/AppContext';
+import PatientCard from '../components/PatientCard';
 
 const DoctorPortal = () => {
   const { doctors, appointments, patients } = useAppContext();
@@ -7,6 +9,7 @@ const DoctorPortal = () => {
   return (
     <div className="doctor-portal">
       <h2>Doctor Portal</h2>
+
       <div className="doctor-list">
         <h3>Doctors</h3>
         <ul>
@@ -31,13 +34,28 @@ const DoctorPortal = () => {
 
       <div className="patients-list">
         <h3>Patients Overview</h3>
-        <ul>
-          {patients.map((patient) => (
-            <li key={patient.id}>
-              {patient.name}, Age: {patient.age}, Condition: {patient.condition}
-            </li>
-          ))}
-        </ul>
+        <table className="patient-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Condition</th>
+              <th>Contact</th>
+              <th>Audio Feedback</th>
+            </tr>
+          </thead>
+          <tbody>
+            {patients.length === 0 ? (
+              <tr>
+                <td colSpan="5">No patients available.</td>
+              </tr>
+            ) : (
+              patients.map((patient) => (
+                <PatientCard key={patient.id} patient={patient} />
+              ))
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   );

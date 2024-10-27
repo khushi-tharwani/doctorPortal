@@ -7,8 +7,102 @@ body {
   color: #4A4A4A; /* Dark gray for readability */
 }
 
+.stat-icon {
+  width: 60px; /* Set a reasonable default size */
+  height: 60px; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Space between image and text */
+  object-fit: contain; /* Ensure the image fits within the given dimensions */
+}
+
+@media (max-width: 768px) {
+  .stat-icon {
+    width: 50px; /* Adjust size for smaller screens */
+    height: 50px;
+  }
+}
+
+.footer {
+  /* position: sticky; Make the footer sticky */
+  bottom: 0; /* Stick to the bottom */
+  /* width: 100%; Full width */
+  background-color: #556B2F; /* Olive green background for the footer */
+  color: #fff; /* White text color for contrast */
+  text-align: center; /* Center align text */
+  padding: 1rem; /* Padding for space */
+  border-top: 1px solid #ddd; /* Subtle top border */
+  z-index: 1000; /* Keep it above other content */
+  border-radius: 10px;
+}
+/* Doctor Portal Styles */
+.doctor-portal {
+  padding: 2rem;
+  background-color: #ffffff; /* White background for doctor portal */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.patients-list {
+  margin-top: 2rem; /* Space above patient list */
+}
+
+/* Table Styles */
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.patient-table th,
+.patient-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+.patient-table th {
+  background-color: #556B2F; /* Olive Green */
+  color: white;
+}
+
+.patient-table tr:hover {
+  background-color: #f1f1f1; /* Light gray on hover */
+}
+
+
+
+.headline {
+  font-size: 1.1rem; /* Slightly larger than default for readability */
+  color: #6b6b6b; /* Muted dark gray for a softer look */
+  margin-bottom: 2rem; /* Space below the text to separate it from other content */
+  line-height: 1.5; /* Slightly increased line-height for better readability */
+  max-width: 800px; /* Limit width to make it easier to read */
+  margin-left: auto; /* Center the paragraph */
+  margin-right: auto; /* Center the paragraph */
+  background-color: #f0f8ff; /* Light blue background for a gentle highlight */
+  padding: 1rem; /* Padding around the text */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.footer p {
+  margin: 0.5rem 0; /* Space between paragraphs */
+  font-size: 0.9rem; /* Slightly smaller text for the footer */
+}
+
+.footer a {
+  color: #FFD700; /* Gold color for links */
+  text-decoration: none; /* Remove underline */
+  margin: 0 0.5rem; /* Space between links */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+.footer a:hover {
+  color: #fff; /* Change to white on hover */
+}
+
 /* Navbar Styles */
 .navbar {
+  position: sticky; /* Make the navbar sticky */
+  top: 0; /* Stick to the top */
   background-color: #556B2F; /* Olive Green for Navbar */
   padding: 1rem;
   display: flex;
@@ -16,6 +110,7 @@ body {
   align-items: center;
   color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  z-index: 1000; /* Keep it above other content */
 }
 
 .navbar-brand {
@@ -43,21 +138,36 @@ body {
 
 /* Dashboard Styles */
 .dashboard {
-  padding: 2rem;
+  padding: 1rem; /* Reduced padding from 2rem to 1rem */
   background-color: #ffffff; /* White background for dashboard */
   border-radius: 10px; /* Rounded corners for the dashboard */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   max-width: 1200px; /* Limit max width for better layout */
-  margin: 2rem auto; /* Centered with margins */
+  margin: 1rem auto; /* Reduced margins for compact layout */
   text-align: center; /* Center align text */
 }
 
 .dashboard h2 {
   color: #2c3e50; /* Darker shade for the heading */
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0; 
+  padding-bottom: 0;/* Reduced bottom margin */
 }
 
+.dashboard-image {
+  width: 100%; /* Allow the image to take the full width of the container */
+  max-width: 1100px; /* Set a higher maximum width */
+  height: auto; /* Adjust height automatically */
+  max-height: 500px; /* Limit the maximum height */
+  margin: 1rem auto; /* Center the image and space around it */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  object-fit: cover; 
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Stats Section */
 .stats {
   display: flex;
   justify-content: space-around; /* Space evenly between cards */
@@ -92,6 +202,48 @@ body {
   color: #34495e; /* Darker gray for readability */
 }
 
+/* Specialization Cards */
+.specializations {
+  margin-top: 2rem; /* Space above the specialization section */
+  margin-bottom: 3rem; /* Increased space below the specialization section */
+}
+
+.specialization-cards {
+  display: flex; /* Enable flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping to the next line */
+  justify-content: space-between; /* Space evenly between cards */
+  gap: 1.5rem; /* Space between specialization cards */
+}
+
+/* Individual Specialization Card */
+.card {
+  background-color: #f8f9fa; /* Light gray background for cards */
+  border-radius: 8px; /* Rounded corners */
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  flex: 1 1 calc(33.33% - 1.5rem); /* Three cards per row with space */
+  max-width: calc(33.33% - 1.5rem); /* Max width for three in a row */
+  box-sizing: border-box; /* Include padding and border in width calculation */
+  transition: transform 0.2s ease; /* Smooth transition for hover effects */
+}
+
+.card:hover {
+  transform: scale(1.02); /* Slightly enlarge on hover for emphasis */
+}
+
+.card h3 {
+  color: #2c3e50; /* Darker shade for headings */
+  margin-bottom: 0.5rem; /* Space below headings */
+  font-size: 1.4rem; /* Increased font size for headings */
+  font-weight: 600; /* Medium font weight for better emphasis */
+}
+
+.card p {
+  color: #5d5d5d; /* Slightly muted gray for text */
+  font-size: 1rem; /* Adjusted font size for readability */
+  line-height: 1.5; /* Increased line height for better spacing */
+  margin: 0; /* Remove default margin */
+}
 /* Form Styles */
 .form-container {
   background-color: #fff;
@@ -192,3 +344,138 @@ button:active {
 .patient-card button:hover {
   background-color: #4a7c2c;
 }
+.faq-section {
+  margin-top: 1rem; /* Space above the FAQ section */
+  padding: 1rem; /* Reduced padding for the FAQ section */
+  background-color: #ffffff; /* Clean white background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.faq-heading {
+  color: #333333; /* Dark color for the heading */
+  font-size: 2rem; /* Adjusted font size for headings */
+  margin-bottom: 1rem; /* Space below heading */
+  font-family: 'Merriweather', serif; /* Elegant font for heading */
+  text-align: center; /* Center align heading */
+}
+
+.faq-item {
+  margin-bottom: 0.75rem; /* Reduced space between FAQ items */
+  border: 1px solid #e0e0e0; /* Light border for the FAQ item */
+  border-radius: 10px; /* Rounded corners */
+  background-color: #fafafa; /* Light gray background for FAQ item */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.faq-item:first-child {
+  margin-top: 1rem; /* Add space above the first FAQ item */
+}
+
+.faq-item:hover {
+  background-color: #f0f0f0; /* Slightly darker on hover */
+  transform: translateY(-1px); /* Lift effect on hover */
+}
+
+.faq-question {
+  padding: 0.75rem 1rem; /* Reduced padding for the question */
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Space between question and toggle */
+  align-items: center; /* Center items vertically */
+  cursor: pointer; /* Indicate clickable items */
+  font-family: 'Roboto', sans-serif; /* Modern font for question */
+}
+
+.faq-question h3 {
+  color: #2c3e50; /* Dark blue for question */
+  margin: 0; /* Remove margin */
+  font-size: 1rem; /* Adjusted font size for question */
+  font-weight: 600; /* Semi-bold for emphasis */
+}
+
+.faq-toggle {
+  font-size: 1.5rem; /* Font size for toggle */
+  color: #888888; /* Light gray for toggle */
+  transition: color 0.3s; /* Smooth color change */
+}
+
+.faq-toggle:hover {
+  color: #333333; /* Darker color on hover */
+}
+
+.faq-answer {
+  display: none; /* Initially hide answers */
+  padding: 0 1rem 0.5rem; /* Reduced padding for answers */
+  font-size: 0.9rem; /* Adjusted font size for answers */
+  line-height: 1.4; /* Slightly decreased line height for tighter spacing */
+  color: #555555; /* Dark gray for answers */
+  text-align: left; /* Align text to the left */
+}
+
+/* Show answer when active */
+.faq-item.active .faq-answer {
+  display: block; /* Show answer when active */
+}
+/* Patient Card Styles */
+.patient-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #ffffff; /* White background for cards */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.patient-card h3 {
+  margin: 0;
+  color: #27ae60; /* Green color for headings */
+}
+
+/* Patient Card Button */
+.patient-card button {
+  background-color: #6a994e;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+
+.patient-card button:hover {
+  background-color: #4a7c2c;
+}
+/* Patient Card Styles */
+.patient-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #ffffff; /* White background for cards */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.patient-card h3 {
+  margin: 0;
+  color: #27ae60; /* Green color for headings */
+}
+
+/* Patient Card Button */
+.patient-card button {
+  background-color: #6a994e;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.patient-card button:hover {
+  background-color: #4a7c2c;
+}
+
+
